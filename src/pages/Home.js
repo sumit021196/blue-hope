@@ -47,10 +47,14 @@ const Home = () => {
             <p><strong>Rooftop Solar Solutions</strong></p>
           </div>
           <div style={{ textAlign: 'center', width: '30%' }}>
-            <img
-              src="https://via.placeholder.com/200x200.png?text=Solar+Parks"
+            <video
+              src="/images/clip.mp4"
               alt="Solar Parks"
               style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', marginBottom: '15px' }}
+              autoPlay
+              loop
+              muted
+              playsInline
             />
             <p><strong>Solar Parks</strong></p>
           </div>
