@@ -56,21 +56,49 @@ const Home = () => {
 
       {/* Focus Areas Section */}
       <section style={{ marginBottom: '40px', animation: 'slideIn 2s ease-in-out' }}>
-        <h3 style={{ color: '#004080', marginBottom: '10px' }}>Our Focus Areas</h3>
-        <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-          <div style={{ textAlign: 'center', width: '30%' }}>
+        <h3 style={{ color: '#004080', marginBottom: '20px', textAlign: 'center' }}>Our Focus Areas</h3>
+        <div style={{ 
+          display: 'flex', 
+          flexDirection: isMobile ? 'column' : 'row',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          gap: '20px'
+        }}>
+          <div style={{ 
+            textAlign: 'center', 
+            width: isMobile ? '100%' : '30%',
+            maxWidth: '350px'
+          }}>
             <img
               src="/images/rooftop.jpg"
               alt="Rooftop Solar Solutions"
-              style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', marginBottom: '15px' }}
+              style={{ 
+                width: '100%', 
+                height: '200px',
+                objectFit: 'cover',
+                borderRadius: '8px', 
+                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', 
+                marginBottom: '15px' 
+              }}
             />
             <p><strong>Rooftop Solar Solutions</strong></p>
           </div>
-          <div style={{ textAlign: 'center', width: '30%' }}>
+          <div style={{ 
+            textAlign: 'center', 
+            width: isMobile ? '100%' : '30%',
+            maxWidth: '350px'
+          }}>
             <video
               src="/images/clip.mp4"
               alt="Solar Parks"
-              style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', marginBottom: '15px' }}
+              style={{ 
+                width: '100%', 
+                height: '200px',
+                objectFit: 'cover',
+                borderRadius: '8px', 
+                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', 
+                marginBottom: '15px' 
+              }}
               autoPlay
               loop
               muted
@@ -78,11 +106,22 @@ const Home = () => {
             />
             <p><strong>Solar Parks</strong></p>
           </div>
-          <div style={{ textAlign: 'center', width: '30%' }}>
+          <div style={{ 
+            textAlign: 'center', 
+            width: isMobile ? '100%' : '30%',
+            maxWidth: '350px'
+          }}>
             <img
               src="/images/escooter.jpg"
               alt="Electric Mobility"
-              style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', marginBottom: '15px' }}
+              style={{ 
+                width: '100%', 
+                height: '200px',
+                objectFit: 'cover',
+                borderRadius: '8px', 
+                boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', 
+                marginBottom: '15px' 
+              }}
             />
             <p><strong>Electric Mobility</strong></p>
           </div>
