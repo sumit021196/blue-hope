@@ -1,22 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div style={{ fontFamily: "'Poppins', sans-serif", padding: '20px', color: '#333' }}>
       {/* Hero Section */}
-      <section style={{ textAlign: 'center', marginBottom: '40px', animation: 'fadeIn 2s ease-in', width: '90vw', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '36px', color: '#0066cc', marginBottom: '10px' }}>Blue Hope</h1>
-        <h2 style={{ fontSize: '20px', color: '#555', marginBottom: '20px' }}>Empowering India's Clean Energy Future</h2>
+      <section style={{ 
+        textAlign: 'center', 
+        marginBottom: '40px', 
+        animation: 'fadeIn 2s ease-in', 
+        width: '90vw', 
+        margin: '0 auto',
+        position: 'relative',
+        zIndex: 1
+      }}>
+        <h1 style={{ fontSize: isMobile ? '28px' : '36px', color: '#0066cc', marginBottom: '10px' }}>Blue Hope</h1>
+        <h2 style={{ fontSize: isMobile ? '16px' : '20px', color: '#555', marginBottom: '20px' }}>Empowering India's Clean Energy Future</h2>
         <img
           src="/images/hero.webp"
           alt="Solar Energy"
           style={{ 
             width: '100%',
             maxWidth: '1200px',
-            height: '400px',
+            height: isMobile ? '200px' : '400px',
             objectFit: 'cover',
             borderRadius: '8px', 
-            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)' 
+            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+            filter: 'brightness(0.9)',
+            zIndex: 0
           }}
         />
       </section>
