@@ -60,7 +60,7 @@ const Home = () => {
           </div>
           <div style={{ textAlign: 'center', width: '30%' }}>
             <img
-              src="/images/electric-mobility.webp"
+              src="/images/escooter.jpg"
               alt="Electric Mobility"
               style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', marginBottom: '15px' }}
             />
