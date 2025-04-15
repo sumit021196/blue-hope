@@ -40,7 +40,7 @@ const Home = () => {
         <div style={{ display: 'flex', justifyContent: 'space-around' }}>
           <div style={{ textAlign: 'center', width: '30%' }}>
             <img
-              src="https://via.placeholder.com/200x200.png?text=Rooftop+Solar"
+              src="/images/rooftop.jpg"
               alt="Rooftop Solar Solutions"
               style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', marginBottom: '15px' }}
             />
@@ -60,7 +60,7 @@ const Home = () => {
           </div>
           <div style={{ textAlign: 'center', width: '30%' }}>
             <img
-              src="https://via.placeholder.com/200x200.png?text=Electric+Mobility"
+              src="/images/electric-mobility.webp"
               alt="Electric Mobility"
               style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)', marginBottom: '15px' }}
             />
