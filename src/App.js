@@ -5,7 +5,7 @@ import About from './pages/About';
 import Business from './pages/Business';
 import SolarPlants from './pages/SolarPlants';
 import Contact from './pages/Contact';
-import WhoWeAre from './pages/WhoWeAre';
+import WhoWeAre from './pages/about/WhoWeAre';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 

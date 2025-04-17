@@ -100,7 +100,7 @@ function Navbar() {
                   borderRadius: '4px',
                   boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
                   zIndex: 1000,
-                  minWidth: '150px'
+                  minWidth: '200px'
                 }}>
                   <Link 
                     to="/who-we-are" 
@@ -115,6 +115,105 @@ function Navbar() {
                     }}
                   >
                     Who We Are
+                  </Link>
+                  <Link 
+                    to="/about/vision-mission" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Vision & Mission
+                  </Link>
+                  <Link 
+                    to="/about/chairman-message" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Chairman's Message
+                  </Link>
+                  <Link 
+                    to="/about/board-of-directors" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Board of Directors
+                  </Link>
+                  <Link 
+                    to="/about/our-team" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Our Team
+                  </Link>
+                  <Link 
+                    to="/about/board-committees" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Board Committees
+                  </Link>
+                  <Link 
+                    to="/about/our-certification" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Our Certification
+                  </Link>
+                  <Link 
+                    to="/about/corporate-office" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Corporate Office
+                  </Link>
+                  <Link 
+                    to="/about/factory" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Factory
+                  </Link>
+                  <Link 
+                    to="/about/hr-policy" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    HR Policy
                   </Link>
                 </div>
               )}
@@ -164,9 +263,16 @@ function Navbar() {
           }}>
             <li style={{ margin: '15px 0' }}><Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}>
-              <Link to="/who-we-are" style={{ color: 'white', textDecoration: 'none' }}>Who We Are</Link>
-            </li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/who-we-are" style={{ color: 'white', textDecoration: 'none' }}>Who We Are</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/vision-mission" style={{ color: 'white', textDecoration: 'none' }}>Vision & Mission</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/chairman-message" style={{ color: 'white', textDecoration: 'none' }}>Chairman's Message</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/board-of-directors" style={{ color: 'white', textDecoration: 'none' }}>Board of Directors</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/our-team" style={{ color: 'white', textDecoration: 'none' }}>Our Team</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/board-committees" style={{ color: 'white', textDecoration: 'none' }}>Board Committees</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/our-certification" style={{ color: 'white', textDecoration: 'none' }}>Our Certification</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/corporate-office" style={{ color: 'white', textDecoration: 'none' }}>Corporate Office</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/factory" style={{ color: 'white', textDecoration: 'none' }}>Factory</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/hr-policy" style={{ color: 'white', textDecoration: 'none' }}>HR Policy</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/business" style={{ color: 'white', textDecoration: 'none' }}>Business</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/solar-plants" style={{ color: 'white', textDecoration: 'none' }}>Solar Plants</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link></li>
