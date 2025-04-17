@@ -6,6 +6,8 @@ function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
+  const [isInvestorDropdownOpen, setIsInvestorDropdownOpen] = useState(false);
+  const [isNewsRoomDropdownOpen, setIsNewsRoomDropdownOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -286,9 +288,178 @@ function Navbar() {
                 </div>
               )}
             </li>
+            <li 
+              onMouseEnter={() => setIsInvestorDropdownOpen(true)}
+              onMouseLeave={() => setIsInvestorDropdownOpen(false)}
+              style={{ position: 'relative' }}
+            >
+              <Link to="/investor-relations" style={{ color: 'white', textDecoration: 'none' }}>
+                Investor Relations
+              </Link>
+              {isInvestorDropdownOpen && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '0',
+                  backgroundColor: '#004d40',
+                  padding: '0.5rem',
+                  borderRadius: '4px',
+                  boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+                  zIndex: 1000,
+                  minWidth: '300px'
+                }}>
+                  <Link to="/investor/financial-results" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Financial Results
+                  </Link>
+                  <Link to="/investor/shareholding-pattern" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Shareholding Pattern
+                  </Link>
+                  <Link to="/investor/stock-exchange" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Stock Exchange Disclosure
+                  </Link>
+                  <Link to="/investor/grievance" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Investor Grievance
+                  </Link>
+                  <Link to="/investor/code-of-conduct" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Code of Conduct
+                  </Link>
+                  <Link to="/investor/statutory-documents" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Statutory Documents
+                  </Link>
+                  <Link to="/investor/annual-reports" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Annual Reports
+                  </Link>
+                  <Link to="/investor/offer-document" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Offer Document
+                  </Link>
+                  <Link to="/investor/shareholders-help" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Shareholder's Help Desk
+                  </Link>
+                  <Link to="/investor/postal-ballot" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Postal Ballot
+                  </Link>
+                  <Link to="/investor/agm-egm-notice" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    AGM/EGM Notice
+                  </Link>
+                  <Link to="/investor/book-closure" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Book Closure Notice
+                  </Link>
+                  <Link to="/investor/nomination-form" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Nomination Form
+                  </Link>
+                  <Link to="/investor/scrutinizer-reports" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Scrutinizer's Reports
+                  </Link>
+                  <Link to="/investor/unclaimed-dividend" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Unclaimed Dividend
+                  </Link>
+                  <Link to="/investor/dividend-history" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Dividend History
+                  </Link>
+                  <Link to="/investor/presentations" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Investor Presentations
+                  </Link>
+                  <Link to="/investor/familiarization-programme" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Familiarization Programme
+                  </Link>
+                  <Link to="/investor/independent-director-terms" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 1rem' }}>
+                    Terms and Conditions for Independent Director
+                  </Link>
+                </div>
+              )}
+            </li>
             <li><Link to="/business" style={{ color: 'white', textDecoration: 'none' }}>Business</Link></li>
             <li><Link to="/solar-plants" style={{ color: 'white', textDecoration: 'none' }}>Solar Plants</Link></li>
             <li><Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link></li>
+            <li 
+              onMouseEnter={() => setIsNewsRoomDropdownOpen(true)}
+              onMouseLeave={() => setIsNewsRoomDropdownOpen(false)}
+              style={{ position: 'relative' }}
+            >
+              <Link to="/news-room" style={{ color: 'white', textDecoration: 'none' }}>
+                News Room
+              </Link>
+              {isNewsRoomDropdownOpen && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '0',
+                  backgroundColor: '#004d40',
+                  padding: '0.5rem',
+                  borderRadius: '4px',
+                  boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+                  zIndex: 1000,
+                  minWidth: '200px'
+                }}>
+                  <Link 
+                    to="/news-room/news" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    News
+                  </Link>
+                  <Link 
+                    to="/news-room/events" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Events
+                  </Link>
+                  <Link 
+                    to="/news-room/videos" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Videos
+                  </Link>
+                  <Link 
+                    to="/news-room/archive" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Archive
+                  </Link>
+                  <Link 
+                    to="/news-room/awards" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Awards
+                  </Link>
+                  <Link 
+                    to="/news-room/newsletter" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Newsletter
+                  </Link>
+                </div>
+              )}
+            </li>
           </ul>
           <button 
             onMouseEnter={() => setIsHovered(true)}
@@ -349,6 +520,33 @@ function Navbar() {
             <li style={{ margin: '15px 0' }}><Link to="/business" style={{ color: 'white', textDecoration: 'none' }}>Business</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/solar-plants" style={{ color: 'white', textDecoration: 'none' }}>Solar Plants</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link></li>
+            <li style={{ margin: '15px 0' }}><Link to="/investor-relations" style={{ color: 'white', textDecoration: 'none' }}>Investor Relations</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/financial-results" style={{ color: 'white', textDecoration: 'none' }}>Financial Results</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/shareholding-pattern" style={{ color: 'white', textDecoration: 'none' }}>Shareholding Pattern</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/stock-exchange" style={{ color: 'white', textDecoration: 'none' }}>Stock Exchange Disclosure</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/grievance" style={{ color: 'white', textDecoration: 'none' }}>Investor Grievance</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/code-of-conduct" style={{ color: 'white', textDecoration: 'none' }}>Code of Conduct</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/statutory-documents" style={{ color: 'white', textDecoration: 'none' }}>Statutory Documents</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/annual-reports" style={{ color: 'white', textDecoration: 'none' }}>Annual Reports</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/offer-document" style={{ color: 'white', textDecoration: 'none' }}>Offer Document</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/shareholders-help" style={{ color: 'white', textDecoration: 'none' }}>Shareholder's Help Desk</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/postal-ballot" style={{ color: 'white', textDecoration: 'none' }}>Postal Ballot</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/agm-egm-notice" style={{ color: 'white', textDecoration: 'none' }}>AGM/EGM Notice</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/book-closure" style={{ color: 'white', textDecoration: 'none' }}>Book Closure Notice</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/nomination-form" style={{ color: 'white', textDecoration: 'none' }}>Nomination Form</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/scrutinizer-reports" style={{ color: 'white', textDecoration: 'none' }}>Scrutinizer's Reports</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/unclaimed-dividend" style={{ color: 'white', textDecoration: 'none' }}>Unclaimed Dividend</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/dividend-history" style={{ color: 'white', textDecoration: 'none' }}>Dividend History</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/presentations" style={{ color: 'white', textDecoration: 'none' }}>Investor Presentations</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/familiarization-programme" style={{ color: 'white', textDecoration: 'none' }}>Familiarization Programme</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/independent-director-terms" style={{ color: 'white', textDecoration: 'none' }}>Terms and Conditions for Independent Director</Link></li>
+            <li style={{ margin: '15px 0' }}><Link to="/news-room" style={{ color: 'white', textDecoration: 'none' }}>News Room</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/news" style={{ color: 'white', textDecoration: 'none' }}>News</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/events" style={{ color: 'white', textDecoration: 'none' }}>Events</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/videos" style={{ color: 'white', textDecoration: 'none' }}>Videos</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/archive" style={{ color: 'white', textDecoration: 'none' }}>Archive</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/awards" style={{ color: 'white', textDecoration: 'none' }}>Awards</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/newsletter" style={{ color: 'white', textDecoration: 'none' }}>Newsletter</Link></li>
             <li style={{ margin: '15px 0' }}>
               <button 
                 style={{
