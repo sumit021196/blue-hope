@@ -38,7 +38,7 @@ const ChairmanMessage = () => {
               Dear Stakeholders,
             </p>
             <p style={{ marginBottom: '1.5rem' }}>
-              It gives me immense pleasure to connect with you through this platform. At Ujaas Energy, we have always believed in the power of sustainable energy to transform lives and build a better future for our coming generations.
+              It gives me immense pleasure to connect with you through this platform. At Blue Hope Energy, we have always believed in the power of sustainable energy to transform lives and build a better future for our coming generations.
             </p>
             <p style={{ marginBottom: '1.5rem' }}>
               Our journey in the renewable energy sector has been marked by innovation, dedication, and a commitment to excellence. We have consistently strived to deliver cutting-edge solar solutions while maintaining the highest standards of quality and reliability.

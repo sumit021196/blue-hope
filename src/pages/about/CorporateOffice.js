@@ -47,7 +47,7 @@ const CorporateOffice = () => {
             }}>Contact Information</h3>
             <p><strong>Phone:</strong> 0731-4715300</p>
             <p><strong>Fax:</strong> 0731-4715344</p>
-            <p><strong>Email:</strong> info@ujaas.com</p>
+            <p><strong>Email:</strong> info@bluehope.com</p>
             <p><strong>Working Hours:</strong> Monday-Friday, 9:30 AM - 6:00 PM</p>
           </div>
         </div>

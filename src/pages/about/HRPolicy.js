@@ -70,7 +70,7 @@ const HRPolicy = () => {
           maxWidth: '800px',
           margin: '0 auto'
         }}>
-          At Ujaas, we believe our employees are our greatest asset. Our HR policies are designed 
+          At Blue Hope, we believe our employees are our greatest asset. Our HR policies are designed 
           to create a positive, inclusive, and growth-oriented workplace where every individual 
           can thrive and contribute to our collective success.
         </p>
@@ -167,7 +167,7 @@ const HRPolicy = () => {
           marginBottom: '1rem'
         }}>Contact our HR department for more information about our policies and benefits.</p>
         <p style={{ color: '#666' }}>
-          <strong>Email:</strong> hr@ujaas.com<br />
+          <strong>Email:</strong> hr@bluehope.com<br />
           <strong>Phone:</strong> 0731-4715300 (Ext. 123)
         </p>
       </div>

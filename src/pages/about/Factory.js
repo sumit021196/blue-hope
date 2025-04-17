@@ -58,7 +58,7 @@ const Factory = () => {
             <p>Pithampur - 454775</p>
             <p>Dist. Dhar, Madhya Pradesh</p>
             <p style={{ marginTop: '1rem' }}><strong>Phone:</strong> 07292-401604</p>
-            <p><strong>Email:</strong> factory@ujaas.com</p>
+            <p><strong>Email:</strong> factory@bluehope.com</p>
           </div>
         </div>
 

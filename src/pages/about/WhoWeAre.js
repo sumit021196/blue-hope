@@ -57,11 +57,11 @@ const WhoWeAre = () => {
               }}>Turning Sunlight into Power</h1>
               
               <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-                <strong>"Ujaas™"</strong>, in local language stands for – "Light at the Dawn". The Solar Energy sector in India is on the rise. According to Statistics, the Solar Power will soon become one of the biggest contributors to India's huge appetite for power. Solar Power will help in meeting the ever increasing power demands of our shining nation.
+                <strong>"Blue Hope™"</strong>, represents our commitment to sustainable energy and environmental preservation. The Solar Energy sector in India is on the rise. According to Statistics, the Solar Power will soon become one of the biggest contributors to India's huge appetite for power. Solar Power will help in meeting the ever increasing power demands of our shining nation.
               </p>
 
               <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-                Ujaas Energy Limited (listed on BSE and NSE) is an ISO 9001:2008 & ISO 14001:2004 certified Company. Our Company is the first company to generate & sell Solar REC in the country from its solar power plant of 2 MW commissioned in March 2012 at Rajgarh (Madhya Pradesh).
+                Blue Hope Energy Limited (listed on BSE and NSE) is an ISO 9001:2008 & ISO 14001:2004 certified Company. Our Company is the first company to generate & sell Solar REC in the country from its solar power plant of 2 MW commissioned in March 2012 at Rajgarh (Madhya Pradesh).
               </p>
 
               <p style={{ fontSize: '1.1rem', lineHeight: '1.8', marginBottom: '2rem' }}>
@@ -82,7 +82,7 @@ const WhoWeAre = () => {
                 <p>Indore- 452010 (MP)</p>
                 <p style={{ marginTop: '1rem' }}>0731 – 471 5300, 471 5330</p>
                 <p>0731 – 471 5344</p>
-                <p style={{ marginTop: '1rem' }}>ujaas@ujaas.com</p>
+                <p style={{ marginTop: '1rem' }}>info@bluehope.com</p>
                 <p style={{ marginTop: '1rem' }}>For Corporate Sales Enquiry</p>
                 <p>9893310032</p>
               </div>

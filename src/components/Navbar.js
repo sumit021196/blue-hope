@@ -5,6 +5,7 @@ function Navbar() {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isProductsDropdownOpen, setIsProductsDropdownOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -218,6 +219,73 @@ function Navbar() {
                 </div>
               )}
             </li>
+            <li 
+              onMouseEnter={() => setIsProductsDropdownOpen(true)}
+              onMouseLeave={() => setIsProductsDropdownOpen(false)}
+              style={{ position: 'relative' }}
+            >
+              <Link to="/products" style={{ color: 'white', textDecoration: 'none' }}>
+                Products
+              </Link>
+              {isProductsDropdownOpen && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '0',
+                  backgroundColor: '#004d40',
+                  padding: '0.5rem',
+                  borderRadius: '4px',
+                  boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+                  zIndex: 1000,
+                  minWidth: '200px'
+                }}>
+                  <Link 
+                    to="/products/blue-hope-park" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Blue Hope Park
+                  </Link>
+                  <Link 
+                    to="/products/blue-hope-my-site" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Blue Hope My Site
+                  </Link>
+                  <Link 
+                    to="/products/blue-hope-home" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Blue Hope Home
+                  </Link>
+                  <Link 
+                    to="/products/transformers" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem'
+                    }}
+                  >
+                    Transformers
+                  </Link>
+                </div>
+              )}
+            </li>
             <li><Link to="/business" style={{ color: 'white', textDecoration: 'none' }}>Business</Link></li>
             <li><Link to="/solar-plants" style={{ color: 'white', textDecoration: 'none' }}>Solar Plants</Link></li>
             <li><Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link></li>
@@ -273,6 +341,11 @@ function Navbar() {
             <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/corporate-office" style={{ color: 'white', textDecoration: 'none' }}>Corporate Office</Link></li>
             <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/factory" style={{ color: 'white', textDecoration: 'none' }}>Factory</Link></li>
             <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/hr-policy" style={{ color: 'white', textDecoration: 'none' }}>HR Policy</Link></li>
+            <li style={{ margin: '15px 0' }}><Link to="/products" style={{ color: 'white', textDecoration: 'none' }}>Products</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/products/blue-hope-park" style={{ color: 'white', textDecoration: 'none' }}>Blue Hope Park</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/products/blue-hope-my-site" style={{ color: 'white', textDecoration: 'none' }}>Blue Hope My Site</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/products/blue-hope-home" style={{ color: 'white', textDecoration: 'none' }}>Blue Hope Home</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/products/transformers" style={{ color: 'white', textDecoration: 'none' }}>Transformers</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/business" style={{ color: 'white', textDecoration: 'none' }}>Business</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/solar-plants" style={{ color: 'white', textDecoration: 'none' }}>Solar Plants</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link></li>
