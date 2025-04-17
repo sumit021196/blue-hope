@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
@@ -34,7 +35,7 @@ function Navbar() {
         <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>
           <div style={{ display: 'flex', alignItems: 'center' }}>
             <img 
-              src="/images/mainlogo.jpg" 
+              src="/images/logo.jpeg" 
               alt="Blue Hope Logo" 
               style={{ 
                 height: '40px',
@@ -81,7 +82,43 @@ function Navbar() {
             padding: 0
           }}>
             <li><Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link></li>
-            <li><Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link></li>
+            <li 
+              onMouseEnter={() => setIsAboutDropdownOpen(true)}
+              onMouseLeave={() => setIsAboutDropdownOpen(false)}
+              style={{ position: 'relative' }}
+            >
+              <Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>
+                About
+              </Link>
+              {isAboutDropdownOpen && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '0',
+                  backgroundColor: '#004d40',
+                  padding: '0.5rem',
+                  borderRadius: '4px',
+                  boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
+                  zIndex: 1000,
+                  minWidth: '150px'
+                }}>
+                  <Link 
+                    to="/who-we-are" 
+                    style={{ 
+                      color: 'white', 
+                      textDecoration: 'none',
+                      display: 'block',
+                      padding: '0.5rem 1rem',
+                      ':hover': {
+                        backgroundColor: 'rgba(255,255,255,0.1)'
+                      }
+                    }}
+                  >
+                    Who We Are
+                  </Link>
+                </div>
+              )}
+            </li>
             <li><Link to="/business" style={{ color: 'white', textDecoration: 'none' }}>Business</Link></li>
             <li><Link to="/solar-plants" style={{ color: 'white', textDecoration: 'none' }}>Solar Plants</Link></li>
             <li><Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link></li>
@@ -127,6 +164,9 @@ function Navbar() {
           }}>
             <li style={{ margin: '15px 0' }}><Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link></li>
+            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}>
+              <Link to="/who-we-are" style={{ color: 'white', textDecoration: 'none' }}>Who We Are</Link>
+            </li>
             <li style={{ margin: '15px 0' }}><Link to="/business" style={{ color: 'white', textDecoration: 'none' }}>Business</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/solar-plants" style={{ color: 'white', textDecoration: 'none' }}>Solar Plants</Link></li>
             <li style={{ margin: '15px 0' }}><Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link></li>
