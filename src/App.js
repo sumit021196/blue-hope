@@ -6,6 +6,7 @@ import Business from './pages/Business';
 import SolarPlants from './pages/SolarPlants';
 import Contact from './pages/Contact';
 import WhoWeAre from './pages/about/WhoWeAre';
+import OurVision from './pages/about/OurVision';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/solar-plants" element={<SolarPlants />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/who-we-are" element={<WhoWeAre />} />
+        <Route path="/about/vision-mission" element={<OurVision />} />
       </Routes>
       <Footer />
     </Router>

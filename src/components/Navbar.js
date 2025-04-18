@@ -9,6 +9,12 @@ function Navbar() {
   const [isInvestorDropdownOpen, setIsInvestorDropdownOpen] = useState(false);
   const [isNewsRoomDropdownOpen, setIsNewsRoomDropdownOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  
+  // Add states for mobile submenu toggles
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [mobileInvestorOpen, setMobileInvestorOpen] = useState(false);
+  const [mobileNewsRoomOpen, setMobileNewsRoomOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,6 +27,48 @@ function Navbar() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Function to close mobile menu
+  const handleMobileMenuItemClick = () => {
+    setIsMobileMenuOpen(false);
+    setMobileAboutOpen(false);
+    setMobileProductsOpen(false);
+    setMobileInvestorOpen(false);
+    setMobileNewsRoomOpen(false);
+  };
+
+  // Function to toggle mobile submenus
+  const toggleMobileSubmenu = (submenu, event) => {
+    event.preventDefault();
+    switch(submenu) {
+      case 'about':
+        setMobileAboutOpen(!mobileAboutOpen);
+        setMobileProductsOpen(false);
+        setMobileInvestorOpen(false);
+        setMobileNewsRoomOpen(false);
+        break;
+      case 'products':
+        setMobileProductsOpen(!mobileProductsOpen);
+        setMobileAboutOpen(false);
+        setMobileInvestorOpen(false);
+        setMobileNewsRoomOpen(false);
+        break;
+      case 'investor':
+        setMobileInvestorOpen(!mobileInvestorOpen);
+        setMobileAboutOpen(false);
+        setMobileProductsOpen(false);
+        setMobileNewsRoomOpen(false);
+        break;
+      case 'newsroom':
+        setMobileNewsRoomOpen(!mobileNewsRoomOpen);
+        setMobileAboutOpen(false);
+        setMobileProductsOpen(false);
+        setMobileInvestorOpen(false);
+        break;
+      default:
+        break;
+    }
+  };
 
   return (
     <nav style={{ 
@@ -482,91 +530,212 @@ function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div style={{
-          display: isMobile ? 'block' : 'none',
-          position: 'absolute',
-          top: '70px',
-          left: 0,
-          right: 0,
-          backgroundColor: '#004d40',
-          padding: '1rem',
-          zIndex: 1000,
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-          transition: 'all 0.3s ease'
+      <div style={{
+        position: 'absolute',
+        top: '70px',
+        left: 0,
+        right: 0,
+        backgroundColor: '#004d40',
+        padding: isMobileMenuOpen ? '1rem' : '0',
+        maxHeight: isMobileMenuOpen ? '2000px' : '0', // Large enough to contain all content
+        opacity: isMobileMenuOpen ? '1' : '0',
+        overflow: 'hidden',
+        transition: 'all 0.3s ease-in-out',
+        zIndex: 1000,
+        boxShadow: isMobileMenuOpen ? '0 4px 6px rgba(0, 0, 0, 0.1)' : 'none'
+      }}>
+        <ul style={{ 
+          listStyle: 'none',
+          margin: 0,
+          padding: 0,
+          opacity: isMobileMenuOpen ? '1' : '0',
+          transform: `translateY(${isMobileMenuOpen ? '0' : '-10px'})`,
+          transition: 'all 0.3s ease-in-out'
         }}>
-          <ul style={{ 
-            listStyle: 'none',
-            margin: 0,
-            padding: 0
-          }}>
-            <li style={{ margin: '15px 0' }}><Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link></li>
-            <li style={{ margin: '15px 0' }}><Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/who-we-are" style={{ color: 'white', textDecoration: 'none' }}>Who We Are</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/vision-mission" style={{ color: 'white', textDecoration: 'none' }}>Vision & Mission</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/chairman-message" style={{ color: 'white', textDecoration: 'none' }}>Chairman's Message</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/board-of-directors" style={{ color: 'white', textDecoration: 'none' }}>Board of Directors</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/our-team" style={{ color: 'white', textDecoration: 'none' }}>Our Team</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/board-committees" style={{ color: 'white', textDecoration: 'none' }}>Board Committees</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/our-certification" style={{ color: 'white', textDecoration: 'none' }}>Our Certification</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/corporate-office" style={{ color: 'white', textDecoration: 'none' }}>Corporate Office</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/factory" style={{ color: 'white', textDecoration: 'none' }}>Factory</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/about/hr-policy" style={{ color: 'white', textDecoration: 'none' }}>HR Policy</Link></li>
-            <li style={{ margin: '15px 0' }}><Link to="/products" style={{ color: 'white', textDecoration: 'none' }}>Products</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/products/blue-hope-park" style={{ color: 'white', textDecoration: 'none' }}>Blue Hope Park</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/products/blue-hope-my-site" style={{ color: 'white', textDecoration: 'none' }}>Blue Hope My Site</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/products/blue-hope-home" style={{ color: 'white', textDecoration: 'none' }}>Blue Hope Home</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/products/transformers" style={{ color: 'white', textDecoration: 'none' }}>Transformers</Link></li>
-            <li style={{ margin: '15px 0' }}><Link to="/business" style={{ color: 'white', textDecoration: 'none' }}>Business</Link></li>
-            <li style={{ margin: '15px 0' }}><Link to="/solar-plants" style={{ color: 'white', textDecoration: 'none' }}>Solar Plants</Link></li>
-            <li style={{ margin: '15px 0' }}><Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link></li>
-            <li style={{ margin: '15px 0' }}><Link to="/investor-relations" style={{ color: 'white', textDecoration: 'none' }}>Investor Relations</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/financial-results" style={{ color: 'white', textDecoration: 'none' }}>Financial Results</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/shareholding-pattern" style={{ color: 'white', textDecoration: 'none' }}>Shareholding Pattern</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/stock-exchange" style={{ color: 'white', textDecoration: 'none' }}>Stock Exchange Disclosure</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/grievance" style={{ color: 'white', textDecoration: 'none' }}>Investor Grievance</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/code-of-conduct" style={{ color: 'white', textDecoration: 'none' }}>Code of Conduct</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/statutory-documents" style={{ color: 'white', textDecoration: 'none' }}>Statutory Documents</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/annual-reports" style={{ color: 'white', textDecoration: 'none' }}>Annual Reports</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/offer-document" style={{ color: 'white', textDecoration: 'none' }}>Offer Document</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/shareholders-help" style={{ color: 'white', textDecoration: 'none' }}>Shareholder's Help Desk</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/postal-ballot" style={{ color: 'white', textDecoration: 'none' }}>Postal Ballot</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/agm-egm-notice" style={{ color: 'white', textDecoration: 'none' }}>AGM/EGM Notice</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/book-closure" style={{ color: 'white', textDecoration: 'none' }}>Book Closure Notice</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/nomination-form" style={{ color: 'white', textDecoration: 'none' }}>Nomination Form</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/scrutinizer-reports" style={{ color: 'white', textDecoration: 'none' }}>Scrutinizer's Reports</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/unclaimed-dividend" style={{ color: 'white', textDecoration: 'none' }}>Unclaimed Dividend</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/dividend-history" style={{ color: 'white', textDecoration: 'none' }}>Dividend History</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/presentations" style={{ color: 'white', textDecoration: 'none' }}>Investor Presentations</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/familiarization-programme" style={{ color: 'white', textDecoration: 'none' }}>Familiarization Programme</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/investor/independent-director-terms" style={{ color: 'white', textDecoration: 'none' }}>Terms and Conditions for Independent Director</Link></li>
-            <li style={{ margin: '15px 0' }}><Link to="/news-room" style={{ color: 'white', textDecoration: 'none' }}>News Room</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/news" style={{ color: 'white', textDecoration: 'none' }}>News</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/events" style={{ color: 'white', textDecoration: 'none' }}>Events</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/videos" style={{ color: 'white', textDecoration: 'none' }}>Videos</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/archive" style={{ color: 'white', textDecoration: 'none' }}>Archive</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/awards" style={{ color: 'white', textDecoration: 'none' }}>Awards</Link></li>
-            <li style={{ margin: '15px 0', paddingLeft: '1rem' }}><Link to="/news-room/newsletter" style={{ color: 'white', textDecoration: 'none' }}>Newsletter</Link></li>
-            <li style={{ margin: '15px 0' }}>
-              <button 
-                style={{
-                  backgroundColor: 'transparent',
-                  border: '2px solid white',
-                  color: 'white',
-                  padding: '0.5rem 1.5rem',
-                  borderRadius: '4px',
-                  fontSize: '1rem',
-                  cursor: 'pointer',
-                  fontFamily: 'inherit',
-                  width: '100%'
-                }}
-              >
-                Sign In
-              </button>
-            </li>
-          </ul>
-        </div>
-      )}
+          <li style={{ margin: '15px 0' }}>
+            <Link to="/" style={{ color: 'white', textDecoration: 'none' }} onClick={handleMobileMenuItemClick}>
+              Home
+            </Link>
+          </li>
+          
+          {/* About Section */}
+          <li style={{ margin: '15px 0' }}>
+            <div 
+              style={{ 
+                color: 'white', 
+                display: 'flex', 
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                cursor: 'pointer'
+              }}
+              onClick={(e) => toggleMobileSubmenu('about', e)}
+            >
+              <span>About</span>
+              <span style={{ transition: 'transform 0.3s ease' }}>
+                {mobileAboutOpen ? '▼' : '▶'}
+              </span>
+            </div>
+            <div style={{ 
+              display: mobileAboutOpen ? 'block' : 'none',
+              paddingLeft: '1rem',
+              marginTop: '0.5rem'
+            }}>
+              <Link to="/who-we-are" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Who We Are</Link>
+              <Link to="/about/vision-mission" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Vision & Mission</Link>
+              <Link to="/about/chairman-message" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Chairman's Message</Link>
+              <Link to="/about/board-of-directors" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Board of Directors</Link>
+              <Link to="/about/our-team" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Our Team</Link>
+              <Link to="/about/board-committees" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Board Committees</Link>
+              <Link to="/about/our-certification" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Our Certification</Link>
+              <Link to="/about/corporate-office" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Corporate Office</Link>
+              <Link to="/about/factory" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Factory</Link>
+              <Link to="/about/hr-policy" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>HR Policy</Link>
+            </div>
+          </li>
+
+          {/* Products Section */}
+          <li style={{ margin: '15px 0' }}>
+            <div 
+              style={{ 
+                color: 'white', 
+                display: 'flex', 
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                cursor: 'pointer'
+              }}
+              onClick={(e) => toggleMobileSubmenu('products', e)}
+            >
+              <span>Products</span>
+              <span style={{ transition: 'transform 0.3s ease' }}>
+                {mobileProductsOpen ? '▼' : '▶'}
+              </span>
+            </div>
+            <div style={{ 
+              display: mobileProductsOpen ? 'block' : 'none',
+              paddingLeft: '1rem',
+              marginTop: '0.5rem'
+            }}>
+              {/* Products submenu items */}
+              <Link to="/products/blue-hope-park" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Blue Hope Park</Link>
+              <Link to="/products/blue-hope-my-site" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Blue Hope My Site</Link>
+              <Link to="/products/blue-hope-home" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Blue Hope Home</Link>
+              <Link to="/products/transformers" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Transformers</Link>
+            </div>
+          </li>
+
+          {/* Investor Relations Section */}
+          <li style={{ margin: '15px 0' }}>
+            <div 
+              style={{ 
+                color: 'white', 
+                display: 'flex', 
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                cursor: 'pointer'
+              }}
+              onClick={(e) => toggleMobileSubmenu('investor', e)}
+            >
+              <span>Investor Relations</span>
+              <span style={{ transition: 'transform 0.3s ease' }}>
+                {mobileInvestorOpen ? '▼' : '▶'}
+              </span>
+            </div>
+            <div style={{ 
+              display: mobileInvestorOpen ? 'block' : 'none',
+              paddingLeft: '1rem',
+              marginTop: '0.5rem'
+            }}>
+              {/* Investor Relations submenu items */}
+              <Link to="/investor/financial-results" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Financial Results</Link>
+              <Link to="/investor/shareholding-pattern" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Shareholding Pattern</Link>
+              <Link to="/investor/stock-exchange" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Stock Exchange Disclosure</Link>
+              <Link to="/investor/grievance" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Investor Grievance</Link>
+              <Link to="/investor/code-of-conduct" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Code of Conduct</Link>
+              <Link to="/investor/statutory-documents" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Statutory Documents</Link>
+              <Link to="/investor/annual-reports" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Annual Reports</Link>
+              <Link to="/investor/offer-document" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Offer Document</Link>
+              <Link to="/investor/shareholders-help" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Shareholder's Help Desk</Link>
+              <Link to="/investor/postal-ballot" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Postal Ballot</Link>
+              <Link to="/investor/agm-egm-notice" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>AGM/EGM Notice</Link>
+              <Link to="/investor/book-closure" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Book Closure Notice</Link>
+              <Link to="/investor/nomination-form" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Nomination Form</Link>
+              <Link to="/investor/scrutinizer-reports" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Scrutinizer's Reports</Link>
+              <Link to="/investor/unclaimed-dividend" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Unclaimed Dividend</Link>
+              <Link to="/investor/dividend-history" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Dividend History</Link>
+              <Link to="/investor/presentations" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Investor Presentations</Link>
+              <Link to="/investor/familiarization-programme" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Familiarization Programme</Link>
+              <Link to="/investor/independent-director-terms" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Terms and Conditions for Independent Director</Link>
+            </div>
+          </li>
+
+          {/* News Room Section */}
+          <li style={{ margin: '15px 0' }}>
+            <div 
+              style={{ 
+                color: 'white', 
+                display: 'flex', 
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                cursor: 'pointer'
+              }}
+              onClick={(e) => toggleMobileSubmenu('newsroom', e)}
+            >
+              <span>News Room</span>
+              <span style={{ transition: 'transform 0.3s ease' }}>
+                {mobileNewsRoomOpen ? '▼' : '▶'}
+              </span>
+            </div>
+            <div style={{ 
+              display: mobileNewsRoomOpen ? 'block' : 'none',
+              paddingLeft: '1rem',
+              marginTop: '0.5rem'
+            }}>
+              {/* News Room submenu items */}
+              <Link to="/news-room/news" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>News</Link>
+              <Link to="/news-room/events" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Events</Link>
+              <Link to="/news-room/videos" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Videos</Link>
+              <Link to="/news-room/archive" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Archive</Link>
+              <Link to="/news-room/awards" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Awards</Link>
+              <Link to="/news-room/newsletter" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Newsletter</Link>
+            </div>
+          </li>
+
+          <li style={{ margin: '15px 0' }}>
+            <Link to="/business" style={{ color: 'white', textDecoration: 'none' }} onClick={handleMobileMenuItemClick}>
+              Business
+            </Link>
+          </li>
+          <li style={{ margin: '15px 0' }}>
+            <Link to="/solar-plants" style={{ color: 'white', textDecoration: 'none' }} onClick={handleMobileMenuItemClick}>
+              Solar Plants
+            </Link>
+          </li>
+          <li style={{ margin: '15px 0' }}>
+            <Link to="/contact" style={{ color: 'white', textDecoration: 'none' }} onClick={handleMobileMenuItemClick}>
+              Contact
+            </Link>
+          </li>
+          
+          <li style={{ margin: '15px 0' }}>
+            <button 
+              onClick={handleMobileMenuItemClick}
+              style={{
+                backgroundColor: 'transparent',
+                border: '2px solid white',
+                color: 'white',
+                padding: '0.5rem 1.5rem',
+                borderRadius: '4px',
+                fontSize: '1rem',
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+                width: '100%'
+              }}
+            >
+              Sign In
+            </button>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 }
