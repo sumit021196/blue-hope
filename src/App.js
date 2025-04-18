@@ -21,6 +21,7 @@ import UjaasPark from './pages/UjaasPark';
 import UjaasSite from './pages/UjaasSite';
 import BlueHopeHome from './pages/BlueHopeHome';
 import Transformers from './pages/Transformers';
+import FinancialResults from './pages/investor/FinancialResults';
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
         <Route path="/ujaas-site" element={<UjaasSite />} />
         <Route path="/products/blue-hope-home" element={<BlueHopeHome />} />
         <Route path="/products/transformers" element={<Transformers />} />
+        <Route path="/investor/financial-results" element={<FinancialResults />} />
       </Routes>
       <Footer />
     </Router>
