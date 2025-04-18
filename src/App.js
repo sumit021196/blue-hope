@@ -22,6 +22,8 @@ import UjaasSite from './pages/UjaasSite';
 import BlueHopeHome from './pages/BlueHopeHome';
 import Transformers from './pages/Transformers';
 import FinancialResults from './pages/investor/FinancialResults';
+import ShareholdingPattern from './pages/investor/ShareholdingPattern';
+import InvestorGrievance from './pages/investor/InvestorGrievance';
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
         <Route path="/products/blue-hope-home" element={<BlueHopeHome />} />
         <Route path="/products/transformers" element={<Transformers />} />
         <Route path="/investor/financial-results" element={<FinancialResults />} />
+        <Route path="/investor/shareholding-pattern" element={<ShareholdingPattern />} />
+        <Route path="/investor/grievance" element={<InvestorGrievance />} />
       </Routes>
       <Footer />
     </Router>
