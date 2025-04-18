@@ -290,7 +290,7 @@ function Navbar() {
                   minWidth: '200px'
                 }}>
                   <Link 
-                    to="/products/blue-hope-park" 
+                    to="/ujaas-park" 
                     style={{ 
                       color: 'white', 
                       textDecoration: 'none',
@@ -301,7 +301,7 @@ function Navbar() {
                     Blue Hope Park
                   </Link>
                   <Link 
-                    to="/products/blue-hope-my-site" 
+                    to="/ujaas-site" 
                     style={{ 
                       color: 'white', 
                       textDecoration: 'none',
@@ -616,8 +616,8 @@ function Navbar() {
               marginTop: '0.5rem'
             }}>
               {/* Products submenu items */}
-              <Link to="/products/blue-hope-park" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Blue Hope Park</Link>
-              <Link to="/products/blue-hope-my-site" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Blue Hope My Site</Link>
+              <Link to="/ujaas-park" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Blue Hope Park</Link>
+              <Link to="/ujaas-site" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Blue Hope My Site</Link>
               <Link to="/products/blue-hope-home" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Blue Hope Home</Link>
               <Link to="/products/transformers" style={{ color: 'white', textDecoration: 'none', display: 'block', padding: '0.5rem 0' }} onClick={handleMobileMenuItemClick}>Transformers</Link>
             </div>

@@ -17,6 +17,10 @@ import Factory from './pages/about/Factory';
 import HRPolicy from './pages/about/HRPolicy';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import UjaasPark from './pages/UjaasPark';
+import UjaasSite from './pages/UjaasSite';
+import BlueHopeHome from './pages/BlueHopeHome';
+import Transformers from './pages/Transformers';
 
 function App() {
   return (
@@ -38,6 +42,10 @@ function App() {
         <Route path="/about/corporate-office" element={<CorporateOffice />} />
         <Route path="/about/factory" element={<Factory />} />
         <Route path="/about/hr-policy" element={<HRPolicy />} />
+        <Route path="/ujaas-park" element={<UjaasPark />} />
+        <Route path="/ujaas-site" element={<UjaasSite />} />
+        <Route path="/products/blue-hope-home" element={<BlueHopeHome />} />
+        <Route path="/products/transformers" element={<Transformers />} />
       </Routes>
       <Footer />
     </Router>
