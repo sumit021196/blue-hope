@@ -65,7 +65,7 @@ const Home = () => {
       {/* Installed Capacity Counter */}
       <div style={{ 
         backgroundColor: '#f0f0f0', 
-        padding: '15px',
+        padding: isMobile ? '8px' : '15px',
         textAlign: 'center',
         borderBottom: '1px solid #ddd',
         position: 'fixed',
@@ -74,27 +74,33 @@ const Home = () => {
         right: 0,
         zIndex: 1001
       }}>
-        <span style={{ fontSize: '24px', fontWeight: '500' }}>Installed Capacity(MW): </span>
+        <span style={{ 
+          fontSize: isMobile ? '16px' : '24px', 
+          fontWeight: '500' 
+        }}>Installed Capacity(MW): </span>
         <span style={{ 
           backgroundColor: '#000', 
           color: '#fff',
-          padding: '4px 8px',
-          margin: '0 4px',
-          fontSize: '28px',
+          padding: isMobile ? '2px 6px' : '4px 8px',
+          margin: '0 2px',
+          fontSize: isMobile ? '20px' : '28px',
           fontWeight: 'bold',
           borderRadius: '4px'
         }}>{Math.floor(displayedCapacity)}</span>
         <span style={{ 
           backgroundColor: '#000', 
           color: '#fff',
-          padding: '4px 8px',
-          fontSize: '28px',
+          padding: isMobile ? '2px 6px' : '4px 8px',
+          fontSize: isMobile ? '20px' : '28px',
           fontWeight: 'bold',
           borderRadius: '4px'
         }}>{(displayedCapacity % 1).toFixed(1).substring(2)}</span>
       </div>
 
-      <div style={{ fontFamily: "'Poppins', sans-serif", marginTop: '85px' }}>
+      <div style={{ 
+        fontFamily: "'Poppins', sans-serif", 
+        marginTop: isMobile ? '65px' : '85px' 
+      }}>
         {/* Latest News Ticker */}
         <div style={{
           backgroundColor: '#fff',

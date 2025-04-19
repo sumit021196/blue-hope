@@ -61,7 +61,7 @@ function Navbar() {
         backgroundColor: '#1e40af',
         padding: '0.75rem',
         position: 'fixed',
-        top: '58px', // Increased from 38px to accommodate larger counter
+        top: isMobile ? '42px' : '58px', // Adjusted for smaller counter on mobile
         left: 0,
         right: 0,
         zIndex: 1000,
@@ -215,7 +215,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div style={{ height: '143px' }} />  {/* Increased to account for larger counter (58px) and navbar (85px) */}
+      <div style={{ height: isMobile ? '127px' : '143px' }} />  {/* Adjusted spacing for mobile */}
     </nav>
   );
 }
