@@ -281,62 +281,141 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Three Panel Section */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr 1fr',
-          gap: '20px',
-          padding: '40px 20px',
-          maxWidth: '1200px',
-          margin: '0 auto'
-        }}>
-          {/* Latest News Panel */}
-          <div style={{ border: '1px solid #ddd', padding: '20px' }}>
-            <h3 style={{ marginBottom: '20px' }}>Latest News</h3>
-            <div>
-              <div style={{ marginBottom: '15px' }}>
-                <span style={{ color: '#ff4444' }}>Apr 10</span>
-                <p>Ujaas Energy Ltd is Proud Major Contributor Of India's First...</p>
-              </div>
-              <div style={{ marginBottom: '15px' }}>
-                <span style={{ color: '#ff4444' }}>Mar 14</span>
-                <p>Our JMD, Mr. Vikalp Mundra Has Been Selected As The Chairman...</p>
-              </div>
-              <div style={{ marginBottom: '15px' }}>
-                <span style={{ color: '#ff4444' }}>Feb 02</span>
-                <p>Our Jt. MD Mr. Anurag Mundra Has Shared His Views At The IMA...</p>
+        {/* Latest News Panel */}
+        {!isMobile && (
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr 1fr',
+            gap: '20px',
+            padding: '40px 20px',
+            maxWidth: '1200px',
+            margin: '0 auto'
+          }}>
+            <div style={{ border: '1px solid #ddd', padding: '20px' }}>
+              <h3 style={{ marginBottom: '20px' }}>Latest News</h3>
+              <div>
+                <div style={{ marginBottom: '15px' }}>
+                  <span style={{ color: '#ff4444' }}>Apr 10</span>
+                  <p>Ujaas Energy Ltd is Proud Major Contributor Of India's First...</p>
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <span style={{ color: '#ff4444' }}>Mar 14</span>
+                  <p>Our JMD, Mr. Vikalp Mundra Has Been Selected As The Chairman...</p>
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <span style={{ color: '#ff4444' }}>Feb 02</span>
+                  <p>Our Jt. MD Mr. Anurag Mundra Has Shared His Views At The IMA...</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* CSR Activity Panel */}
-          <div style={{ border: '1px solid #ddd', padding: '20px' }}>
-            <h3 style={{ marginBottom: '20px' }}>CSR Activity</h3>
-            <img 
-              src="/images/csr-hands.jpg" 
-              alt="CSR Activity"
-              style={{
-                width: '100%',
-                height: 'auto',
-                borderRadius: '8px'
-              }}
-            />
-          </div>
+            {/* CSR Activity Panel */}
+            <div style={{ border: '1px solid #ddd', padding: '20px' }}>
+              <h3 style={{ marginBottom: '20px' }}>CSR Activity</h3>
+              <img 
+                src="/images/csr-hands.jpg" 
+                alt="CSR Activity"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '8px'
+                }}
+              />
+            </div>
 
-          {/* Installed Locations Panel */}
-          <div style={{ border: '1px solid #ddd', padding: '20px' }}>
-            <h3 style={{ marginBottom: '20px' }}>Installed Locations</h3>
-            <img 
-              src="/images/india-map.jpg" 
-              alt="Installed Locations Map"
-              style={{
-                width: '100%',
-                height: 'auto',
-                borderRadius: '8px'
-              }}
-            />
+            {/* Installed Locations Panel */}
+            <div style={{ border: '1px solid #ddd', padding: '20px' }}>
+              <h3 style={{ marginBottom: '20px' }}>Installed Locations</h3>
+              <img 
+                src="/images/india-map.jpg" 
+                alt="Installed Locations Map"
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  borderRadius: '8px'
+                }}
+              />
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* Mobile Panels */}
+        {isMobile && (
+          <div style={{
+            padding: '20px',
+            maxWidth: '1200px',
+            margin: '0 auto'
+          }}>
+            {/* Latest News Panel for Mobile */}
+            <div style={{ 
+              border: '1px solid #ddd', 
+              padding: '15px',
+              marginBottom: '20px'
+            }}>
+              <h3 style={{ 
+                marginBottom: '15px',
+                fontSize: '1.2rem'
+              }}>Latest News</h3>
+              <div style={{ fontSize: '0.9rem' }}>
+                <div style={{ marginBottom: '15px' }}>
+                  <span style={{ color: '#ff4444' }}>Apr 10</span>
+                  <p>Ujaas Energy Ltd is Proud Major Contributor Of India's First...</p>
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <span style={{ color: '#ff4444' }}>Mar 14</span>
+                  <p>Our JMD, Mr. Vikalp Mundra Has Been Selected As The Chairman...</p>
+                </div>
+                <div style={{ marginBottom: '15px' }}>
+                  <span style={{ color: '#ff4444' }}>Feb 02</span>
+                  <p>Our Jt. MD Mr. Anurag Mundra Has Shared His Views At The IMA...</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Map and Journey sections moved below for mobile */}
+            <div style={{ 
+              border: '1px solid #ddd', 
+              padding: '15px',
+              marginBottom: '20px'
+            }}>
+              <h3 style={{ 
+                marginBottom: '15px',
+                fontSize: '1.2rem'
+              }}>Installed Locations</h3>
+              <img 
+                src="/images/india-map.jpg" 
+                alt="Installed Locations Map"
+                style={{
+                  width: '100%',
+                  height: '200px',
+                  objectFit: 'cover',
+                  borderRadius: '8px'
+                }}
+              />
+            </div>
+
+            {/* CSR Activity Panel for Mobile */}
+            <div style={{ 
+              border: '1px solid #ddd', 
+              padding: '15px'
+            }}>
+              <h3 style={{ 
+                marginBottom: '15px',
+                fontSize: '1.2rem'
+              }}>CSR Activity</h3>
+              <img 
+                src="/images/csr-hands.jpg" 
+                alt="CSR Activity"
+                style={{
+                  width: '100%',
+                  height: '180px',
+                  objectFit: 'cover',
+                  borderRadius: '8px'
+                }}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

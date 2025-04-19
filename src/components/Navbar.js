@@ -64,8 +64,9 @@ function Navbar() {
         top: isMobile ? '42px' : '58px',
         left: 0,
         right: 0,
-        zIndex: 1000,
-        boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+        zIndex: 1002,  // Increased z-index to be above other content
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        width: '100%'
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -176,7 +177,7 @@ function Navbar() {
                     borderRadius: '4px',
                     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
                     width: isMobile ? '100%' : '180px',
-                    zIndex: 1001
+                    zIndex: 1003  // Increased to be above navbar
                   }}>
                     {items.map((item) => (
                       <Link
