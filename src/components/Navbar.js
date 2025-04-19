@@ -59,9 +59,9 @@ function Navbar() {
     <nav>
       <div style={{
         backgroundColor: '#1e40af',
-        padding: '0.75rem',
+        padding: isMobile ? '0.5rem' : '0.75rem',
         position: 'fixed',
-        top: isMobile ? '42px' : '58px', // Adjusted for smaller counter on mobile
+        top: isMobile ? '42px' : '58px',
         left: 0,
         right: 0,
         zIndex: 1000,
@@ -78,7 +78,7 @@ function Navbar() {
           {/* Logo */}
           <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
             <img src="/images/logo.jpeg" alt="Logo" style={{ 
-              height: '70px',  // Increased from 50px to 70px
+              height: isMobile ? '50px' : '70px',
               width: 'auto',
               objectFit: 'contain'
             }} />
@@ -92,16 +92,16 @@ function Navbar() {
                 background: 'none',
                 border: 'none',
                 color: 'white',
-                fontSize: '2.5rem',
+                fontSize: '2rem',
                 cursor: 'pointer',
-                padding: '0.75rem',
+                padding: '0.5rem',
                 zIndex: 1002,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: '54px',
-                height: '54px',
-                marginRight: '10px'
+                width: '44px',
+                height: '44px',
+                marginRight: '5px'
               }}
             >
               ☰
@@ -215,7 +215,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div style={{ height: isMobile ? '127px' : '143px' }} />  {/* Adjusted spacing for mobile */}
+      <div style={{ height: isMobile ? '107px' : '143px' }} />  {/* Reduced mobile height: 42px (counter) + 65px (navbar) */}
     </nav>
   );
 }
