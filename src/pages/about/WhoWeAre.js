@@ -55,14 +55,25 @@ const WhoWeAre = () => {
       </div>
 
       {/* Main Content */}
-      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '1rem' : '2rem' }}>
+      <div style={{ 
+        width: '100%',
+        maxWidth: '1200px', 
+        margin: '0 auto', 
+        padding: isMobile ? '1rem' : '2rem',
+        boxSizing: 'border-box' 
+      }}>
         <div style={{ 
           display: 'flex', 
           gap: '2rem',
-          flexDirection: isMobile ? 'column' : 'row'
+          flexDirection: isMobile ? 'column' : 'row',
+          width: '100%'
         }}>
           {/* Left side - Main Content */}
-          <div style={{ flex: '2' }}>
+          <div style={{ 
+            flex: '2',
+            width: '100%',
+            maxWidth: isMobile ? '100%' : 'auto'
+          }}>
             <div style={{ marginBottom: isMobile ? '2rem' : '3rem' }}>
               <h1 style={{ 
                 fontSize: isMobile ? '2rem' : '2.5rem', 
@@ -124,7 +135,11 @@ const WhoWeAre = () => {
 
           {!isMobile && (
             /* Right side - Journey and Map for desktop */
-            <div style={{ flex: '1' }}>
+            <div style={{ 
+              flex: '1',
+              width: '100%',
+              maxWidth: isMobile ? '100%' : 'auto'
+            }}>
               {/* Journey Section */}
               <div style={{ marginBottom: '3rem' }}>
                 <h2 style={{ fontSize: '2rem', color: '#333', marginBottom: '2rem' }}>OUR JOURNEY</h2>
@@ -154,7 +169,10 @@ const WhoWeAre = () => {
 
         {/* Mobile Journey and Map Sections */}
         {isMobile && (
-          <div style={{ marginTop: '2rem' }}>
+          <div style={{ 
+            marginTop: '2rem',
+            width: '100%'
+          }}>
             {/* Journey Section */}
             <div style={{ marginBottom: '2rem' }}>
               <h2 style={{ 

@@ -59,14 +59,15 @@ function Navbar() {
     <nav>
       <div style={{
         backgroundColor: '#1e40af',
-        padding: isMobile ? '0.5rem' : '0.75rem',
+        padding: isMobile ? '0.25rem' : '0.75rem',
         position: 'fixed',
-        top: isMobile ? '42px' : '58px',
+        top: isMobile ? '36px' : '58px',
         left: 0,
         right: 0,
-        zIndex: 1002,  // Increased z-index to be above other content
+        zIndex: 1002,
         boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-        width: '100%'
+        width: '100%',
+        boxSizing: 'border-box'
       }}>
         <div style={{
           maxWidth: '1200px',
@@ -74,12 +75,14 @@ function Navbar() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          position: 'relative'
+          position: 'relative',
+          paddingLeft: isMobile ? '0.5rem' : 0,
+          paddingRight: isMobile ? '0.5rem' : 0
         }}>
           {/* Logo */}
           <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>
             <img src="/images/logo.jpeg" alt="Logo" style={{ 
-              height: isMobile ? '50px' : '70px',
+              height: isMobile ? '40px' : '70px',
               width: 'auto',
               objectFit: 'contain'
             }} />
@@ -93,16 +96,16 @@ function Navbar() {
                 background: 'none',
                 border: 'none',
                 color: 'white',
-                fontSize: '2rem',
+                fontSize: '1.75rem',
                 cursor: 'pointer',
-                padding: '0.5rem',
+                padding: '0.25rem',
                 zIndex: 1002,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: '44px',
-                height: '44px',
-                marginRight: '5px'
+                width: '36px',
+                height: '36px',
+                marginRight: 0
               }}
             >
               ☰
@@ -216,7 +219,7 @@ function Navbar() {
           </div>
         </div>
       </div>
-      <div style={{ height: isMobile ? '107px' : '143px' }} />  {/* Reduced mobile height: 42px (counter) + 65px (navbar) */}
+      <div style={{ height: isMobile ? '86px' : '143px' }} /> {/* Reduced spacer height for mobile */}
     </nav>
   );
 }
